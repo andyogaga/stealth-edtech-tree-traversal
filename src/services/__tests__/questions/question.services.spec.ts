@@ -24,4 +24,21 @@ describe('Questions test (unit)', () => {
     expect(res.annotations[0]).toBe('anotation 1');
     await done();
   });
+
+  it('should catch an error when create topic fails', async (done) => {
+    jest.spyOn(questionModel, 'create').mockImplementation(
+      async (): Promise<any> => {
+        return Promise.reject();
+      },
+    );
+    try {
+      await createQuestion({
+        questionNumber: 'question 1',
+        annotations: ['anotation 1', 'anotation 2', 'anotation 3'],
+      });
+    } catch (error) {
+      expect(error.message).toBe('Failed to create new question');
+      done();
+    }
+  });
 });

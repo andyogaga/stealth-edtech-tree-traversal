@@ -1,6 +1,6 @@
 import { ITopic } from '../models/topic/topic.d';
 import topicModel from '../models/topic/topic';
-import { generateKeywords } from '../utils';
+import { generateKeywords, logError } from '../utils';
 
 export const createTopic = async ({
   topic,
@@ -18,6 +18,7 @@ export const createTopic = async ({
     })
     .catch((error) => {
       // Log error
+      logError(error);
       throw new Error('Failed to create new topic');
     });
 };
@@ -28,6 +29,7 @@ export const findTopic = async (topic: string): Promise<ITopic | null> => {
     return await topicModel.findOne({ topic });
   } catch (error) {
     // Log error
+    logError(error);
     throw new Error('Failed to create new topic');
   }
 };
@@ -87,7 +89,7 @@ export const getRelatedQuestionsFromTopic = async (
     );
   } catch (error) {
     // Log error
-
+    logError(error);
     throw new Error('Failed to create new question');
   }
 };

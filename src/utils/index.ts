@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/node';
 const commonWords = [
   'i',
   'a',
@@ -122,4 +123,8 @@ export const generateKeywords = (inputText: string): string[] => {
         }),
     ),
   );
+};
+
+export const logError = (error: Error): void => {
+  Sentry.captureException(error);
 };

@@ -1,5 +1,6 @@
 import questionModel from '../models/question/question';
 import { IQuestion } from '../models/question/question.d';
+import { logError } from '../utils';
 
 export const createQuestion = async ({
   questionNumber,
@@ -15,7 +16,7 @@ export const createQuestion = async ({
     })
     .catch((error: Error) => {
       // Log error
-
+      logError(error)
       throw new Error('Failed to create new question');
     });
 };

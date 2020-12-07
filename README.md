@@ -2,8 +2,9 @@
 
 - First intsall node and npm. Get installation instructions from https://nodejs.org/
 - Install typescript globally using _npm i -g typescript_
-- Clone the repo
-- Install all packages using _npm i_ or _npm install_
+- Clone the repo from `https://github.com/andyogaga/stealth-edtech-tree-traversal.git`
+- Install all packages using `yarn` or `yarn install`
+- 
 
 ### Routes
 

@@ -2,11 +2,11 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 import { json, urlencoded } from 'body-parser';
+import * as Sentry from '@sentry/node';
 import cors from 'cors';
 import route from './routes/routesApi';
 import 'dotenv/config';
 import morgan from 'morgan';
-import * as Sentry from '@sentry/node';
 
 declare global {
   namespace NodeJS {
@@ -56,7 +56,7 @@ app.use(
     optionsSuccessStatus: 200,
   }),
 );
-app.get('/', (req: Request, res: Response): void => {
+app.get('/', (_req: Request, res: Response): void => {
   res.send('Welcome to the Server Apis');
 });
 app.use('/', route);
@@ -64,11 +64,10 @@ app.use('/', route);
 app.use(
   (
     serverError: { error: Error; message?: string },
-    req: Request,
+    _req: Request,
     res: Response,
-    next: NextFunction,
+    _next: NextFunction,
   ) => {
-    Sentry.captureException(serverError.error);
     res.status(500).json({
       message: serverError.message,
     });

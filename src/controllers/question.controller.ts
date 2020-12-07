@@ -57,7 +57,13 @@ export const getRelatedQuestions = async (
   try {
     const { topic } = req.query as any;
     const relatedQuestions = await getRelatedQuestionsFromTopic(topic);
-    await res.status(200).json(relatedQuestions);
+    await res
+      .status(200)
+      .json(
+        Array.from(new Set(relatedQuestions)).sort(
+          (a: string, b: string): number => Number(a) - Number(b),
+        ),
+      );
   } catch (error) {
     return next({
       message: 'saving questions failed',

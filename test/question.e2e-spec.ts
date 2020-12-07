@@ -1,23 +1,20 @@
 import request from 'supertest';
 import app from '../src/index';
-import topicModel from '../src/models/topic/topic';
+import Mongoose from 'mongoose';
 
 describe('Question recommendation test (e2e)', () => {
-  it('/search (GET)', async done => {
-    const res = await request(app).get(
-      'search?topic=Cell Structure and Organisation',
-    );
-    expect(res.status).toEqual(200);
-    console.log(res);
-
-    await done();
+  afterAll(() => {
+    Mongoose.connection.close()
+    app.close();
   });
 
-  it('/search?topic=Cell structrures (GET)', async done => {
+  it('/search?topic=Cell Structure and Organisation (GET)', async done => {
     const res = await request(app).get(
       '/search?topic=Cell Structure and Organisation',
     );
-    expect(Array.isArray(res)).toBe(true);
+    expect(Array.isArray(res.body)).toBe(true);
+    expect(res.body[0]).toBe('8');
+    expect(res.body.length).toBe(22);
     done();
   });
 });

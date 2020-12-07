@@ -4,16 +4,23 @@
 - Install typescript globally using _npm i -g typescript_
 - Clone the repo from `https://github.com/andyogaga/stealth-edtech-tree-traversal.git`
 - Install all packages using `yarn` or `yarn install`
-- 
+-
 
 ### Routes
 
-##### User Routes
+- Base route: \_{baseUrl}
+- Search route: \_{baseUrl}/search
 
-- User Registration: _{baseUrl}/api/v1/register_
-- User Login: _{baseUrl}/api/v1/login_
+### Tests
 
-##### Topup Routes
+### End to End Tests
 
-- initialize Topup: _{baseUrl}/api/v1/paystack/topup_
-- Verify topup: _{baseUrl}/api/v1/topup/verify/:reference_
+`yarn test:e2e`
+
+### Unit and Integration Tests
+
+`yarn test`
+
+### Test Coverage
+
+`yarn test:cov`

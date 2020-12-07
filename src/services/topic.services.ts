@@ -9,18 +9,18 @@ export const createTopic = async ({
   topic: string;
   head: string;
 }): Promise<ITopic | null> => {
-  if (!topic) return null;
-  return await topicModel
-    .create({
+  try {
+    if (!topic) return null;
+    return await topicModel.create({
       topic,
       head,
       keywords: generateKeywords(topic),
-    })
-    .catch((error) => {
-      // Log error
-      logError(error);
-      throw new Error('Failed to create new topic');
     });
+  } catch (error) {
+    // Log error
+    logError(error);
+    throw new Error('Failed to create new topic');
+  }
 };
 
 export const findTopic = async (topic: string): Promise<ITopic | null> => {
@@ -30,7 +30,7 @@ export const findTopic = async (topic: string): Promise<ITopic | null> => {
   } catch (error) {
     // Log error
     logError(error);
-    throw new Error('Failed to create new topic');
+    throw new Error('Failed to find topic');
   }
 };
 
@@ -90,6 +90,6 @@ export const getRelatedQuestionsFromTopic = async (
   } catch (error) {
     // Log error
     logError(error);
-    throw new Error('Failed to create new question');
+    throw new Error('Failed to get question numbers');
   }
 };

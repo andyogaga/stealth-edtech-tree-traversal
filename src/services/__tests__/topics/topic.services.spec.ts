@@ -56,6 +56,21 @@ describe('Topics test (unit)', () => {
     done();
   });
 
+  it('should catch an error when create topic fails', async (done) => {
+    jest.spyOn(topicModel, 'create').mockImplementation(
+      async (): Promise<any> => {
+        return Promise.reject();
+      },
+    );
+    try {
+      await createTopic({ head: '', topic: 'Chloroplast' });
+    } catch (error) {
+      console.log(error);
+      expect(error.message).toBe('Failed to create new topic');
+      done();
+    }
+  });
+
   it('should find a topic in DB', async (done) => {
     jest.spyOn(topicModel, 'findOne').mockImplementation((): any => {
       return {
@@ -102,6 +117,18 @@ describe('Topics test (unit)', () => {
     done();
   });
 
+  it('should catch an error when find topic fails', async (done) => {
+    jest.spyOn(topicModel, 'findOne').mockImplementation((): any => {
+      return Promise.reject();
+    });
+    try {
+      await findTopic('Chloroplast');
+    } catch (error) {
+      expect(error.message).toBe('Failed to find topic');
+      done();
+    }
+  });
+
   it('should aggregate topic and return question array', async (done) => {
     jest.spyOn(topicModel, 'aggregate').mockImplementation((): any => {
       return [
@@ -142,5 +169,19 @@ describe('Topics test (unit)', () => {
     expect(Array.isArray(res)).toBe(true);
     expect(res.length).toBe(0);
     done();
+  });
+
+  it('should catch an error when aggregation fails', async (done) => {
+    jest.spyOn(topicModel, 'aggregate').mockImplementation((): any => {
+      return new Error('Error occurred in aggregation');
+    });
+    try {
+      await getRelatedQuestionsFromTopic(
+        'Identify cell structures (including organelles) of typical plant and animal cells from diagrams, photomicrographs and as seen under the light microscope using prepared slides and fresh material treated with an appropriate temporary staining technique:',
+      );
+    } catch (error) {
+      expect(error.message).toBe('Failed to get question numbers');
+      done();
+    }
   });
 });

@@ -55,8 +55,15 @@ export const getRelatedQuestions = async (
   next: NextFunction,
 ): Promise<void> => {
   try {
-    const { topic } = req.query as any;
-    const relatedQuestions = await getRelatedQuestionsFromTopic(topic);
+    /**
+     * exact - tells whether to check if topic keywords matches the annotations (default = true)
+     * topic - the topic you wish to search for
+     */
+    const { topic, exact } = req.query as any;
+    const relatedQuestions = await getRelatedQuestionsFromTopic(
+      topic,
+      !Boolean(exact == 'false'),
+    );
     await res
       .status(200)
       .json(

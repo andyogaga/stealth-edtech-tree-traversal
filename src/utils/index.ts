@@ -108,21 +108,33 @@ const commonWords = [
   'evaluate',
   'reasons',
   'function',
+  'seen',
+  'under',
+  'list',
+  'simple',
 ];
 
 export const generateKeywords = (inputText: string): string[] => {
-  return Array.from(
-    new Set(
-      inputText
-        .replace(/[^a-zA-Z0-9 _]+/g, '')
-        .split(' ')
-        .filter((word: string) => {
-          return !commonWords
-            .map(commonWord => commonWord.toLowerCase())
-            .includes(word.toLowerCase());
-        }),
-    ),
-  );
+  const splitted = inputText.replace(/[^a-zA-Z0-9 _]+/g, '').split(' ');
+  // Make use of a customized array chunk
+  const bigArray = [];
+  let smallArray = [];
+  let index = 0;
+  while (index < splitted.length) {
+    if (commonWords.includes(splitted[index].toLowerCase())) {
+      if (smallArray.length > 0) bigArray.push(smallArray);
+      smallArray = [];
+    } else {
+      smallArray.push(splitted[index]);
+      if (index + 1 === splitted.length && smallArray.length > 0) {
+        bigArray.push(smallArray);
+      }
+    }
+    index++;
+  }
+  const newKeywords = bigArray.map(arrayWord => arrayWord.join(' '));
+
+  return Array.from(new Set(newKeywords));
 };
 
 export const logError = (error: Error): void => {

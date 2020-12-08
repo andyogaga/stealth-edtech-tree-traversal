@@ -36,6 +36,7 @@ export const findTopic = async (topic: string): Promise<ITopic | null> => {
 
 export const getRelatedQuestionsFromTopic = async (
   topic: string,
+  exact?: boolean,
 ): Promise<string[]> => {
   try {
     if (!topic) return [];
@@ -59,34 +60,64 @@ export const getRelatedQuestionsFromTopic = async (
           path: '$children',
         },
       },
+      ...(!!exact
+        ? [
+            {
+              $lookup: {
+                from: 'questions',
+                localField: 'children.topic',
+                foreignField: 'annotations',
+                as: 'question',
+              },
+            },
+          ]
+        : [
+            {
+              $unwind: {
+                path: '$children.keywords',
+              },
+            },
+            {
+              $lookup: {
+                from: 'questions',
+                let: {
+                  keyword: '$children.keywords',
+                },
+                pipeline: [
+                  {
+                    $unwind: {
+                      path: '$annotations',
+                    },
+                  },
+                  {
+                    $addFields: {
+                      topicMatch: {
+                        $regexMatch: {
+                          input: '$annotations',
+                          regex: '$$keyword',
+                          options: 'i',
+                        },
+                      },
+                    },
+                  },
+                  {
+                    $match: {
+                      topicMatch: true,
+                    },
+                  },
+                ],
+                as: 'question',
+              },
+            },
+          ]),
       {
         $unwind: {
-          path: '$children.keywords',
-        },
-      },
-      {
-        $lookup: {
-          from: 'questions',
-          localField: 'children.keywords',
-          foreignField: 'annotations',
-          as: 'questions',
-        },
-      },
-      {
-        $project: {
-          questions: 1,
-        },
-      },
-      {
-        $unwind: {
-          path: '$questions',
+          path: '$question',
           preserveNullAndEmptyArrays: false,
         },
       },
     ]);
-    return questions.map(
-      (question) => question?.questions?.questionNumber ?? '',
-    );
+    return questions.map(question => question?.question?.questionNumber ?? '');
   } catch (error) {
     // Log error
     logError(error);

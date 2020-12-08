@@ -8,21 +8,29 @@
 
 ### Routes
 
-- Base route: \_{baseUrl}
+### - Base route: 
+`\_{baseUrl}`
 
-- Search route: \_{baseUrl}/search?topic=State that large molecules are synthesised from smaller basic units
-  `The topic can be encoded`
-
-- Deeper Search route: \_{baseUrl}/search?exact=false&topic=State that large molecules are synthesised from smaller basic units
-
+### - Search route:
 ```
+\_{baseUrl}/search?topic=State that large molecules are synthesised from smaller basic units
+
+(The topic can be encoded)
+```
+
+### - Deeper Search route: 
+```
+\_{baseUrl}/search?exact=false&topic=State that large molecules are synthesised from smaller basic units
+
 For a deeper search for more questions using keyword substring search in the question annotations.
 To accomplish this feature, add `exact=false` as a query in the Search route
 ```
 
-- Upload Questions \_{baseUrl}/question/create-batch
+### - Upload Questions 
 
 ```
+\_{baseUrl}/question/create-batch
+
 Format for Uploading Questions in .xlsx
 A: 'questionNumber',
 B: 'annotation1',
@@ -31,9 +39,11 @@ C: 'annotation2',
 Sheet name => Questions
 ```
 
-- Upload Topics \_{baseUrl}/topic/create-batch
+### - Upload Topics 
 
 ```
+\_{baseUrl}/topic/create-batch
+
 Format for Uploading Topics in .xlsx
 A: 'topic1',
 B: 'topic2',
@@ -92,7 +102,5 @@ Snapshots:   0 total
 Time:        16.387 s
 Ran all test suites.
 Done in 18.37s.
-
-```
 
 ```

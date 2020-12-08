@@ -1,8 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1607322811210" clover="3.2.0">
-  <project timestamp="1607322811210" name="All files">
-    <metrics statements="51" coveredstatements="51" conditionals="18" coveredconditionals="15" methods="14" coveredmethods="14" elements="83" coveredelements="80" complexity="0" loc="51" ncloc="51" packages="4" files="7" classes="7"/>
-    <package name="models.question">
+<coverage generated="1607408029238" clover="3.2.0">
+  <project timestamp="1607408029238" name="All files">
+    <metrics statements="161" coveredstatements="151" conditionals="109" coveredconditionals="87" methods="49" coveredmethods="43" elements="319" coveredelements="281" complexity="0" loc="161" ncloc="161" packages="8" files="14" classes="14"/>
+    <package name="dist.src.models.question">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="question.js" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\dist\src\models\question\question.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="question.model.js" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\dist\src\models\question\question.model.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="dist.src.models.topic">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="topic.js" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\dist\src\models\topic\topic.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="topic.model.js" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\dist\src\models\topic\topic.model.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="dist.src.services">
+      <metrics statements="56" coveredstatements="56" conditionals="54" coveredconditionals="48" methods="26" coveredmethods="25"/>
+      <file name="question.services.js" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\dist\src\services\question.services.js">
+        <metrics statements="18" coveredstatements="18" conditionals="18" coveredconditionals="16" methods="11" coveredmethods="10"/>
+        <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="12" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+      <file name="topic.services.js" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\dist\src\services\topic.services.js">
+        <metrics statements="38" coveredstatements="38" conditionals="36" coveredconditionals="32" methods="15" coveredmethods="15"/>
+        <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="3" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="12" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="3" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="50" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="97" count="2" type="cond" truecount="9" falsecount="3"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="dist.src.utils">
+      <metrics statements="26" coveredstatements="16" conditionals="27" coveredconditionals="14" methods="10" coveredmethods="5"/>
+      <file name="index.js" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\dist\src\utils\index.js">
+        <metrics statements="26" coveredstatements="16" conditionals="27" coveredconditionals="14" methods="10" coveredmethods="5"/>
+        <line num="2" count="2" type="cond" truecount="4" falsecount="1"/>
+        <line num="3" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="4" falsecount="1"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="15" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="6"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="134" count="2" type="stmt"/>
+        <line num="135" count="2" type="stmt"/>
+        <line num="139" count="35" type="stmt"/>
+        <line num="140" count="3780" type="stmt"/>
+        <line num="144" count="2" type="stmt"/>
+        <line num="145" count="2" type="stmt"/>
+        <line num="146" count="4" type="stmt"/>
+        <line num="148" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.models.question">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="question.model.ts" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\src\models\question\question.model.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -17,7 +150,7 @@
         <line num="6" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="models.topic">
+    <package name="src.models.topic">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="topic.model.ts" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\src\models\topic\topic.model.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -32,8 +165,8 @@
         <line num="6" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="services">
-      <metrics statements="31" coveredstatements="31" conditionals="18" coveredconditionals="15" methods="10" coveredmethods="10"/>
+    <package name="src.services">
+      <metrics statements="30" coveredstatements="30" conditionals="20" coveredconditionals="17" methods="10" coveredmethods="10"/>
       <file name="question.services.ts" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\src\services\question.services.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
@@ -45,7 +178,7 @@
         <line num="20" count="1" type="stmt"/>
       </file>
       <file name="topic.services.ts" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\src\services\topic.services.ts">
-        <metrics statements="24" coveredstatements="24" conditionals="18" coveredconditionals="15" methods="7" coveredmethods="7"/>
+        <metrics statements="23" coveredstatements="23" conditionals="20" coveredconditionals="17" methods="7" coveredmethods="7"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -62,28 +195,38 @@
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
-        <line num="41" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="42" count="2" type="stmt"/>
-        <line num="87" count="2" type="stmt"/>
-        <line num="88" count="1" type="cond" truecount="9" falsecount="3"/>
-        <line num="92" count="1" type="stmt"/>
-        <line num="93" count="1" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="42" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="120" count="3" type="cond" truecount="9" falsecount="3"/>
+        <line num="123" count="1" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="utils">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+    <package name="src.utils">
+      <metrics statements="19" coveredstatements="19" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
       <file name="index.ts" path="C:\Users\FarmNovation\AndyDoc\stealth-edtech\src\utils\index.ts">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <metrics statements="19" coveredstatements="19" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
-        <line num="113" count="2" type="stmt"/>
-        <line num="114" count="2" type="stmt"/>
-        <line num="120" count="35" type="stmt"/>
-        <line num="121" count="3780" type="stmt"/>
-        <line num="128" count="2" type="stmt"/>
-        <line num="129" count="4" type="stmt"/>
+        <line num="117" count="2" type="stmt"/>
+        <line num="118" count="2" type="stmt"/>
+        <line num="120" count="2" type="stmt"/>
+        <line num="121" count="2" type="stmt"/>
+        <line num="122" count="2" type="stmt"/>
+        <line num="123" count="2" type="stmt"/>
+        <line num="124" count="35" type="cond" truecount="2" falsecount="0"/>
+        <line num="125" count="19" type="cond" truecount="2" falsecount="0"/>
+        <line num="126" count="19" type="stmt"/>
+        <line num="128" count="16" type="stmt"/>
+        <line num="129" count="16" type="cond" truecount="4" falsecount="0"/>
+        <line num="130" count="2" type="stmt"/>
+        <line num="133" count="35" type="stmt"/>
+        <line num="135" count="9" type="stmt"/>
+        <line num="137" count="2" type="stmt"/>
+        <line num="140" count="2" type="stmt"/>
+        <line num="141" count="4" type="stmt"/>
       </file>
     </package>
   </project>

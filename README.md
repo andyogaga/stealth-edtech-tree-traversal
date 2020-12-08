@@ -58,29 +58,40 @@ Sheet name  => Topics
 
 See below the present test coverage for the project
 
------------------------|---------|----------|---------|---------|-------------------
-File | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
------------------------|---------|----------|---------|---------|-------------------
-All files | 100 | 83.33 | 100 | 100 |
-models/question | 100 | 100 | 100 | 100 |
-question.model.ts | 100 | 100 | 100 | 100 |
-question.ts | 100 | 100 | 100 | 100 |
-models/topic | 100 | 100 | 100 | 100 |
-topic.model.ts | 100 | 100 | 100 | 100 |
-topic.ts | 100 | 100 | 100 | 100 |
-services | 100 | 83.33 | 100 | 100 |
-question.services.ts | 100 | 100 | 100 | 100 |
-topic.services.ts | 100 | 83.33 | 100 | 100 | 88
-utils | 100 | 100 | 100 | 100 |
-index.ts | 100 | 100 | 100 | 100 |
------------------------|---------|----------|---------|---------|-------------------
+--------------------------|---------|----------|---------|---------|-------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+--------------------------|---------|----------|---------|---------|-------------------
+All files                 |   90.82 |    79.82 |   87.76 |   93.79 | 
+ dist/src/models/question |     100 |      100 |     100 |     100 | 
+  question.js             |     100 |      100 |     100 |     100 | 
+  question.model.js       |     100 |      100 |     100 |     100 | 
+ dist/src/models/topic    |     100 |      100 |     100 |     100 | 
+  topic.js                |     100 |      100 |     100 |     100 | 
+  topic.model.js          |     100 |      100 |     100 |     100 | 
+ dist/src/services        |   97.18 |    88.89 |   96.15 |     100 | 
+  question.services.js    |   91.67 |    88.89 |   90.91 |     100 | 3,12
+  topic.services.js       |     100 |    88.89 |     100 |     100 | 12,97
+ dist/src/utils           |   51.52 |    51.85 |      50 |   61.54 | 
+  index.js                |   51.52 |    51.85 |      50 |   61.54 | 3-7,10-12,16-19  
+ src/models/question      |     100 |      100 |     100 |     100 | 
+  question.model.ts       |     100 |      100 |     100 |     100 | 
+  question.ts             |     100 |      100 |     100 |     100 | 
+ src/models/topic         |     100 |      100 |     100 |     100 | 
+  topic.model.ts          |     100 |      100 |     100 |     100 | 
+  topic.ts                |     100 |      100 |     100 |     100 | 
+ src/services             |     100 |       85 |     100 |     100 | 
+  question.services.ts    |     100 |      100 |     100 |     100 | 
+  topic.services.ts       |     100 |       85 |     100 |     100 | 120
+ src/utils                |     100 |      100 |     100 |     100 | 
+  index.ts                |     100 |      100 |     100 |     100 | 
+--------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 2 passed, 2 total
-Tests: 11 passed, 11 total
-Snapshots: 0 total
-Time: 7.434 s
+Test Suites: 4 passed, 4 total
+Tests:       23 passed, 23 total
+Snapshots:   0 total
+Time:        16.387 s
 Ran all test suites.
-Done in 8.93s.
+Done in 18.37s.
 
 ```
 

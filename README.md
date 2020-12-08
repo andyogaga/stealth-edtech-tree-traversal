@@ -13,14 +13,14 @@
 
 ### - Search route:
 ```
-\_{baseUrl}/search?topic=State that large molecules are synthesised from smaller basic units
+\_{baseUrl}/search?q=State that large molecules are synthesised from smaller basic units
 
 (The topic can be encoded)
 ```
 
 ### - Deeper Search route: 
 ```
-\_{baseUrl}/search?exact=false&topic=State that large molecules are synthesised from smaller basic units
+\_{baseUrl}/search?exact=false&q=State that large molecules are synthesised from smaller basic units
 
 For a deeper search for more questions using keyword substring search in the question annotations.
 To accomplish this feature, add `exact=false` as a query in the Search route

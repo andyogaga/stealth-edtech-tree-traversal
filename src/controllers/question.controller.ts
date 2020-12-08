@@ -57,11 +57,15 @@ export const getRelatedQuestions = async (
   try {
     /**
      * exact - tells whether to check if topic keywords matches the annotations (default = true)
-     * topic - the topic you wish to search for
+     * q - the topic you wish to search for
      */
-    const { topic, exact } = req.query as any;
+    const { q, exact } = req.query as any;
+    if (!q) {
+      res.status(400).send(`Bad Query, Please enter Query 'q' in url`);
+      return;
+    }
     const relatedQuestions = await getRelatedQuestionsFromTopic(
-      topic,
+      q,
       !Boolean(exact == 'false'),
     );
     await res
